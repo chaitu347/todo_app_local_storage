@@ -25,9 +25,7 @@ function App() {
   }
 
   
-  useEffect(()=>{
-    localStorage.setItem("todo",JSON.stringify(todos))
-  },[todos])
+  
 
 
   //To get the data frpom the local Storage
@@ -38,6 +36,10 @@ function App() {
     }
     
   },[])
+
+  useEffect(()=>{
+    localStorage.setItem("todo",JSON.stringify(todos))
+  },[todos])
 
   return (
       <TodoProvider value={{todos,addTodo,updateTodo,deleteTodo,todoCompleted}}>
